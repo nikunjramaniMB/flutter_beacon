@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 
 class Beacon {
-  Beacon({this.beaconId, this.email = '', this.name = ''});
+  Beacon({required this.beaconId, this.email = '', this.name = ''});
 
   final String beaconId;
   final String email;
@@ -12,7 +12,7 @@ class Beacon {
     try {
       await _channel.invokeMethod('setupBeacon', [beaconId, email, name]);
     } on PlatformException catch (e) {
-      throw (e.message);
+      throw Exception(e.message);
     }
   }
 
@@ -20,7 +20,7 @@ class Beacon {
     try {
       await _channel.invokeMethod('openBeacon', [beaconId]);
     } on PlatformException catch (e) {
-      throw (e.message);
+      throw Exception(e.message);
     }
   }
 }

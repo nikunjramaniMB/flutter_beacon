@@ -41,7 +41,9 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.helpscout:beacon-ui:$beaconVersion"
+    implementation ("com.helpscout:beacon-ui:$beaconVersion") {
+        exclude group: 'org.threeten', module: 'threetenbp'
+    }
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
 }
