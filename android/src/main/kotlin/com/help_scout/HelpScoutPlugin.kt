@@ -34,11 +34,11 @@ class HelpScoutPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         if (call.method == "setupBeacon") {
 
-            helpScoutImplementation.setupBeacon(call.arguments);
-            result.success("success")
+            helpScoutImplementation.setupBeacon(call.arguments as Map<*, *>);
+            result.success(true)
         } else if(call.method == "openBeacon") {
-            helpScoutImplementation.openBeacon(context);
-            result.success("success")
+            helpScoutImplementation.openBeacon(context, call.arguments as Map<*, *>);
+            result.success(true)
         }
         else {
             result.notImplemented()
@@ -50,18 +50,18 @@ class HelpScoutPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onDetachedFromActivity() {
-        // TODO("Not yet implemented")
+
     }
 
     override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-        // TODO("Not yet implemented")
+
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-        // TODO("Not yet implemented")
+
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
-        // TODO("Not yet implemented")
+
     }
 }

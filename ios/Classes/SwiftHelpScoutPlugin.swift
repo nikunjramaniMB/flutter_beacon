@@ -13,12 +13,12 @@ public class SwiftHelpScoutPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     let helpScouteImplementation: HelpScoutImplementation = HelpScoutImplementation();
     if(call.method == "setupBeacon") {
-       
-        helpScouteImplementation.setupBeacon(arguments: call.arguments ?? [""]);
-        
+        helpScouteImplementation.setupBeacon(arguments: call.arguments as! [String:Any?]);
+        result(true);
         
     } else if(call.method == "openBeacon") {
-        helpScouteImplementation.openBeacon(arguments: call.arguments ?? [""]);
+        helpScouteImplementation.openBeacon(arguments: call.arguments as! [String:Any?]);
+        result(true);
     }
   }
 }
