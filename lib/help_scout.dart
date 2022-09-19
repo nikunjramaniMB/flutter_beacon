@@ -32,4 +32,8 @@ class Beacon {
     await _channel.invokeMethod(
         'openBeacon', {"beacon": beaconId, "signature": signature});
   }
+
+  static Future<void> logout() async {
+    await _channel.invokeMethod('logoutBeacon');
+  }
 }

@@ -19,6 +19,9 @@ public class SwiftHelpScoutPlugin: NSObject, FlutterPlugin {
     } else if(call.method == "openBeacon") {
         helpScouteImplementation.openBeacon(arguments: call.arguments as! [String:Any?]);
         result(true);
+    } else if(call.method == "logoutBeacon") {
+        helpScouteImplementation.logoutBeacon();
+        result(true);
     }
   }
 }

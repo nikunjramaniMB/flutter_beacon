@@ -39,6 +39,9 @@ class HelpScoutPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         } else if(call.method == "openBeacon") {
             helpScoutImplementation.openBeacon(context, call.arguments as Map<*, *>);
             result.success(true)
+        } else if(call.method == "logoutBeacon") {
+            helpScoutImplementation.logoutBeacon();
+            result.success(true)
         }
         else {
             result.notImplemented()

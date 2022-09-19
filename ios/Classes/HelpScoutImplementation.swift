@@ -24,6 +24,10 @@ import Beacon;
         }
     }
 
+    func logoutBeacon()  -> Void {
+        HSBeacon.logout()
+    }
+
     func identifyUser(email:String, name:String, attributes: [String:String]?) -> Void {
         let user=HSBeaconUser();
         user.email = email;

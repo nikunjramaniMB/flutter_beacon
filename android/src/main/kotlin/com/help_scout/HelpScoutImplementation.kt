@@ -31,6 +31,14 @@ class HelpScoutImplementation {
         }
     }
 
+    fun logoutBeacon() {
+        try {
+            Beacon.logout();
+        } catch (e: UnknownError) {
+            throw(e);
+        }
+    }
+
     private fun identifyUser(email: String, name: String, attributes: Map<String, String>?) {
         try {
             Beacon.identify(email, name);
