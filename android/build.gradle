@@ -1,6 +1,6 @@
 group 'com.help_scout'
 version '1.0-SNAPSHOT'
-
+apply plugin: 'kotlin-kapt'
 buildscript {
     apply from: './dependencies.gradle'
 
@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.5.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -21,12 +21,10 @@ rootProject.allprojects {
         jcenter()
     }
 }
-
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 34
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -42,6 +40,6 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.helpscout:beacon:3.0.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 }
